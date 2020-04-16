@@ -4,8 +4,15 @@ import matplotlib.pyplot as plt
 import seaborn
 import cv2
 
-img = cv2.imread(r"C:\Users\johns\Pictures\Saved Pictures\evanholy.jpg", cv2.IMREAD_GRAYSCALE)
-cv2.imshow("Holyfield vs Tyson", img)
-cv2.waitKey(0)
-cv2.destroyAllWindows()
+cap = cv2.VideoCapture("C:\Users\johns\Videos\Captures\Left hand off the cage.mp4")
+while True:
+    ret, frame = cap.read()
+    gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+    cv2.imshow('boxing vid',frame)
+    cv2.imshow("grayscale", gray)
 
+    if cv2.waitKey(1) & 0xFF == ord('q'):
+        break
+
+cap.release()
+cv2.destroyAllWindows()
