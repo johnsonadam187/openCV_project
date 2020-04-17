@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import seaborn
 import cv2
 
-img = cv2.imread(r"C:\Users\johns\Pictures\Saved Pictures\evanholy.jpg", cv2.IMREAD_COLOR)
+img = cv2.imread(r"C:\Users\johns\Pictures\Saved Pictures\Holyfield.jpg", cv2.IMREAD_COLOR)
 cv2.rectangle(img, (10,10), (150, 150), (255, 0, 0), 5)
 cv2.circle(img, (75, 75), 75, (0, 255, 0), 5)
 font = cv2.FONT_HERSHEY_SIMPLEX
