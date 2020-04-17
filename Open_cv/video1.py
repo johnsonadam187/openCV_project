@@ -5,12 +5,13 @@ import seaborn
 import cv2
 
 
-cap = cv2.VideoCapture(r"C:\Users\johns\Videos\Captures\Drop shift left hook.mp4", cv2.IMREAD_GRAYSCALE)
+cap = cv2.VideoCapture(r"C:\Users\johns\Videos\Captures\Drop shift left hook.mp4")
 
 
 while True:
   ret, frame = cap.read()
-  cv2.imshow("frame", frame)
+  grayframe = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+  cv2.imshow("frame", grayframe)
 
   if cv2.waitKey(1) & 0xFF == ord('q'):
       break
